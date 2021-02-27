@@ -1,55 +1,52 @@
 package com.hakimbocar.Exo7;
-
-import java.util.Objects;
-
 public class Joueur {
-    private String nom;
-    private int age;
 
-    public Joueur() {
+	private String nom;
+	private int age;
+	
+	public Joueur() { //Constructeur vide
+    }
+	
+	public Joueur(String nomJoueur,int ageJoueur) { //Constructeur 
+		
+		nom=nomJoueur;
+		age=ageJoueur;
     }
 
-    public Joueur(String nom, int age) {
-        this.nom = nom;
-        this.age = age;
-    }
+	public String getNom() {
+		return nom;
+	}
 
-    public String getNom() {
-        return nom;
-    }
+	public void setNom(String nom) {
+		this.nom = nom;
+	}
 
-    public void setNom(String nom) {
-        this.nom = nom;
-    }
+	public int getAge() {
+		return age;
+	}
 
-    public int getAge() {
-        return age;
-    }
+	public void setAge(int age) {
+		this.age = age;
+	}
+	
+	@Override
+	public String toString() {
+		return "Joueur : nom=" + nom + ", age=" + age + "]";
+	}
 
-    public void setAge(int age) {
-        this.age = age;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof Joueur)) return false;
-        Joueur joueur = (Joueur) o;
-        return getAge() == joueur.getAge() && Objects.equals(getNom(), joueur.getNom());
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(getNom(), getAge());
-    }
-
-    @Override
-    public String toString() {
-        return "Joueur : " + "nom= " + nom + ", "+"age= "+age+"\n";
-    }
-
-    public int compareTo(Joueur j2)  {
-        return j2.getNom().compareTo(this.getNom());
-    }
+	public boolean equals(Object u)
+	{
+		if(!(u instanceof Joueur)) {
+			return false;
+		}
+		Joueur u1=(Joueur)u;
+		return (nom==u1.nom)&&(age==u1.age);
+	}
+	
+	public int compareTo(Joueur other) {
+		
+		return this.nom.compareTo(other.nom); //methode compareTo va comparer les joueurs en fonction de leur nom
+	}
+	
 
 }
