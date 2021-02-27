@@ -26,6 +26,7 @@ public class Exo8 {
         System.out.println("-- Les Joueurs de la décennie 1960 : ---\n\t"+joueursDecennie);
         System.out.println("\tAu nombre de   : "+reg.count(1960));
 
+
         System.out.println("--- Le nombre total de joueurs enregistrés dans le registre. : ---\n\t\tTotal : "+reg.count());
 
         joueurs.add(new Joueur("Steve",1980));

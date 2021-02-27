@@ -1,5 +1,4 @@
 package com.hakimbocar.Exo8;
-
 import java.util.Objects;
 
 public class Joueur {

@@ -42,7 +42,6 @@ public class RegistreJoueurs {
         }
         return joueursDecennie;
     }
-
     /*
         une méthode count(int) qui retourne le nombre de joueurs nés dans cette décennie.
      */
@@ -85,5 +84,4 @@ public class RegistreJoueurs {
                 return buffer.toString();
         }
     }
-
 }
