@@ -22,8 +22,11 @@ public class Exo8 {
         }
         System.out.println(reg);
         joueursDecennie = reg.get(1960);
-        System.out.println("-- Les Joueurs de la décennie 1960 : ---\n\t"+joueursDecennie);
-        System.out.println("--- Le nombre total de joueurs enregistrés dans le registre. : ---\n\t\tTotal : "+reg.count());
+        System.out.println("Les Joueurs de la décennie 1960 :  "+joueursDecennie.
+                toString().replace('[',  ' ').
+                replace(']',' '));
+
+        System.out.println("Le nombre total de joueurs enregistrés dans le registre : "+reg.count());
 
         joueurs.clear();
         joueurs.add(new Joueur("Steve",1980));
@@ -33,7 +36,7 @@ public class Exo8 {
         joueurs.add(new Joueur("Paul",1993));
 
 
-        System.out.println("\n--- Nouvelle table de hachage  : --");
+        System.out.println("\n--- Nouvelle table de hachage  : ");
         // Ajoutons tous ces joueurs de plus dans la table de hachage
         for (Joueur j : joueurs) {
             reg.addJoueur(j);
