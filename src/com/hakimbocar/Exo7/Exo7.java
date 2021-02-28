@@ -1,6 +1,7 @@
 package com.hakimbocar.Exo7;
-
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 public class Exo7 {
 
