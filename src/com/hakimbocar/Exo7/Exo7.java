@@ -27,13 +27,19 @@ public static void main(String[] args) {
                 System.out.println(je);
         }
 
+        // clear joueurs
+        joueurs.clear();
+        System.out.println();
+
+        // ajouter des joueurs dans la liste j
         j.add(new Joueur("Diallo",10));
         j.add(new Joueur("BEN TAARIT",11));
         j.add(new Joueur("Luffy",12));
         j.add(new Joueur("Zoro",1));
         j.add(new Joueur("Tony",13));
-        // Ajouter des joueurs dans l'équipe team
-        Collections.sort(j);
+
+        // Ajouter des joueurs de la liste j dans l'équipe team
+        Collections.sort(j); // trier les joueurs par ordre alphabetique
         for (Joueur joueur : j) {
             team.addJoueur(joueur);
         }
