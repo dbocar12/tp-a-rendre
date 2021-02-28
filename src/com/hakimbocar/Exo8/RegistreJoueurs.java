@@ -67,21 +67,23 @@ public class RegistreJoueurs {
 
     @Override
     public String toString() {
-        Set<Map.Entry<Integer,List<Joueur>>> keyset = this.map.entrySet();
-        Iterator<Map.Entry<Integer,List<Joueur>>> i = keyset.iterator();
-        if (!i.hasNext())
-            return "";
+        Set<Map.Entry<Integer,List<Joueur>>> entrySet = this.map.entrySet();
+        StringBuilder str = new StringBuilder();
+        StringBuilder last = new StringBuilder();
+        str.append("Nombre de decennies : ").append(map.values().size()).append("\n");
 
-        StringBuilder buffer = new StringBuilder();
-
-        for (;;) {
-            Map.Entry<Integer,List<Joueur>> me = i.next();
-            Integer key = me.getKey();
-            List<Joueur> value = me.getValue();
-            buffer.append(key.toString()).append("\t");
-            buffer.append(value.toString()).append("\n");
-            if (!i.hasNext())
-                return buffer.toString();
+        for (Map.Entry<Integer, List<Joueur>> entry :entrySet) {
+            str.append(entry.getKey()).append(" \t{ ").
+                    append(this.count(entry.getKey())).
+                    append(" Joueurs } : \t").
+                    append(" ").append(entry.getValue()).
+                    append("\n");
         }
+        last.append(str.toString().replace(']',' ').
+                replace('[',' ')).
+                append("Total   { ").
+                append(this.count()).append(" Joueurs }\n");
+
+        return last.toString();
     }
 }

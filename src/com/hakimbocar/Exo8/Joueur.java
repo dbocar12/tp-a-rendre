@@ -4,10 +4,6 @@ import java.util.Objects;
 public class Joueur {
     private String nom;
     private int anneeDenaissance;
-
-    public Joueur() {
-    }
-
     public Joueur(String nom, int anneeDenaissance) {
         this.nom = nom;
         this.anneeDenaissance = anneeDenaissance;
