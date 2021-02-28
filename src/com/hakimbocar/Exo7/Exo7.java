@@ -3,7 +3,6 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-
 public class Exo7 {
 
 public static void main(String[] args) {
@@ -52,8 +51,6 @@ public static void main(String[] args) {
         if (team.removeJoueur(j.get(4))){
             System.out.println(j.get(4)+" est retiré du team");
         }
-        boolean b = team.isJoueurPresent(j.get(4));
-        System.out.println("Tony fait il encore partie de l'equipe : "+b);
         System.out.println("\nNouvelle " + team);
 
         teamCopie.addJoueur(j.get(1));
