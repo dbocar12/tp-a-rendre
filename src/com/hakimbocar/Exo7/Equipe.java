@@ -1,10 +1,11 @@
 package com.hakimbocar.Exo7;
 import java.util.ArrayList;
+
 public class Equipe {
 	private ArrayList<Joueur> listeJoueurs;
 
 	public Equipe() { 
-		listeJoueurs = new ArrayList<Joueur>();
+		listeJoueurs = new ArrayList<>();
 	}
 
 	public void addJoueur(Joueur j) {
@@ -15,32 +16,21 @@ public class Equipe {
 		return listeJoueurs.remove(j);
 	}
 
-	public boolean isJoueurPresent(String nom) {
-		int i;
-		int sz = listeJoueurs.size();
-		for (i = 0; i < sz; i++) {
-			if (nom.equalsIgnoreCase(listeJoueurs.get(i).getNom())) // On compare les noms en ne tenant pas comptes des
-																	// majuscules/minuscules
-				return true;
-		}
-		return false;
+	public boolean isJoueurPresent(Joueur j) {
+		return listeJoueurs.contains(j);
 	}
 
 	@Override
 	public String toString() {
-		String ret;
-		int i;
-		int sz = listeJoueurs.size();
-		Joueur j;
+		StringBuilder str = new StringBuilder();
+		str.append("Equipe : ").append(listeJoueurs.size())
+				.append(" joueurs\n");
 
-		ret = "Equipe :\n";
-		for (i = 0; i < sz; i++) {
-			j = listeJoueurs.get(i);
-			ret = ret + "nom= " + j.getNom() + " , age=" + j.getAge() + "\n";
-
+		for (Joueur element : listeJoueurs) {
+			str.append(element).append("\n");
 		}
 
-		return ret;
+		return str.toString();
 	}
 
 	/* Question 5 */
@@ -50,8 +40,7 @@ public class Equipe {
 		int sz = listeJoueurs.size();
 		for (i = 0; i < sz; i++) {
 			joueur = listeJoueurs.get(i);
-
-			if (team2.isJoueurPresent(joueur.getNom())) { // On verifie d'abord si un joueur de meme nom est present dans les deux equipes
+			if (team2.isJoueurPresent(joueur)) { // On verifie d'abord si ce joueur est present dans les deux equipes
 				this.removeJoueur(joueur); // Si c'est le cas, on supprime le joueur dans notre equipe
 			}
 		}
@@ -62,7 +51,6 @@ public class Equipe {
 	/* Question 6 */
 	public void clear() {
 	  listeJoueurs.clear();
-		
 	}
 	
 	/* Question 7 */
