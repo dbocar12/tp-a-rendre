@@ -1,23 +1,39 @@
 package com.hakimbocar.Exo7;
 
-import java.util.List;
+import java.util.*;
 
 public class Exo7 {
 
 public static void main(String[] args) {
-        List<Joueur> j;
+        List<Joueur> j = new ArrayList<>();
+        List<Joueur> joueurs = new ArrayList<>();
         Equipe team = new Equipe();
         Equipe teamCopie = new Equipe();
         EquipeLimitee team2 = new EquipeLimitee(3);
         EquipeLimitee team3 = new EquipeLimitee(2);
 
-        j = List.of(new Joueur("Diallo",10),
-                new Joueur("BEN TAARIT",11),
-                new Joueur("Luffy",12),
-                new Joueur("Zoro",1),
-                new Joueur("Tony",13)
-        );
+        // Test de la methode sort pour trier
+        joueurs.add(new Joueur("Monkey", 25));
+        joueurs.add(new Joueur("Luffy", 15));
+        joueurs.add(new Joueur("Zoro", 24));
+        joueurs.add(new Joueur("Sanji", 23));
+        System.out.println("Liste de joueurs : ");
+        for (Joueur je : joueurs) {
+                System.out.println(je);
+        }
+        System.out.println("\nListe de joueurs triés : ");
+        Collections.sort(joueurs);
+        for (Joueur je : joueurs) {
+                System.out.println(je);
+        }
+
+        j.add(new Joueur("Diallo",10));
+        j.add(new Joueur("BEN TAARIT",11));
+        j.add(new Joueur("Luffy",12));
+        j.add(new Joueur("Zoro",1));
+        j.add(new Joueur("Tony",13));
         // Ajouter des joueurs dans l'équipe team
+        Collections.sort(j);
         for (Joueur joueur : j) {
             team.addJoueur(joueur);
         }
@@ -33,6 +49,7 @@ public static void main(String[] args) {
         System.out.println("\nNouvelle " + team);
 
         teamCopie.addJoueur(j.get(1));
+        Collections.sort(j);
         System.out.println(teamCopie);
 
         // Ajouter tous les joueurs de l equipe team dans teamCopie
@@ -53,6 +70,7 @@ public static void main(String[] args) {
             team2.addJoueur(j.get(i));
 
         }
+        Collections.sort(j);
         System.out.println("[+] "+team2.getNombreJoueurs()+" joueurs sont ajoutes\n");
         System.out.print(team2);
         System.out.println("Age moyenne : "+ team2.getMoyenneAge());

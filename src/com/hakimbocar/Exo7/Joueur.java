@@ -1,14 +1,13 @@
 package com.hakimbocar.Exo7;
-
 import java.util.Objects;
 
-public class Joueur {
+public class Joueur implements Comparable<Joueur> {
 
 	private String nom;
 	private int age;
-	
+
 	public Joueur() { //Constructeur vide
-    }
+	}
 
 	public Joueur(String nom, int age) {
 		this.nom = nom;
@@ -49,9 +48,10 @@ public class Joueur {
 		return Objects.hash(getNom(), getAge());
 	}
 
+	@Override
 	public int compareTo(Joueur other) {
-
 		return this.nom.compareTo(other.nom); //methode compareTo va comparer les joueurs en fonction de leur nom
 	}
 
 }
+
